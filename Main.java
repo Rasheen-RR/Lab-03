@@ -48,9 +48,13 @@ public class Main {
                 restart = true;
                 break;
             case 4:
-                rollDice(dice);
+                if(dice == null){
+                    System.out.println("Create a dice first!");
+                }else{
+                    dice.rollDice();
+                    System.out.println(dice);
+                }
                 restart = true;
-                System.out.println(dice);
                 break;
             case 5:
                 setSideUp(sc);
@@ -107,17 +111,7 @@ public class Main {
         }
     }
 
-    public static void rollDice(Dice dice){
-        if(dice == null){
-            System.out.println("Create a dice first!");
-        }else{
-            Random random = new Random();
-            int randomNum =  ThreadLocalRandom.current().nextInt(1, dice.getNumSides() + 1);
-            dice.setSideUp(randomNum);
-            dice.setDiceType(String.format("d%s",randomNum));
-            System.out.println(String.format("You rolled: %s", randomNum));
-        }
-    }
+
 
     public static void setSideUp(Scanner sc){
         if(dice == null){
@@ -159,9 +153,9 @@ public class Main {
 
         while(!isCold){
             for(int i = 0; i < coldYahtzeeNumber; i++){
-                rollDice(diceArray[i]);
+                diceArray[i].rollDice();
             }
-
+            System.out.println("------------");
             count++;
 
 //            if(diceArray[0].getSideUp() == diceArray[1].getSideUp() &&
