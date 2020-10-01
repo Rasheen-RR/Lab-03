@@ -122,7 +122,6 @@ public class Main {
             while(true){
                 try{
                     int sideUp = sc.nextInt();
-                    sc.nextLine();
                     if(sideUp > dice.getNumSides()){
                         throw new InvalidAttributeValueException();
                     }else{
@@ -132,10 +131,11 @@ public class Main {
                     }
                 }catch (Exception ex){
                     System.out.println("Enter a valid side!");
-                    continue;
+                    sc.nextLine();
                 }
             }
         }
+        sc.nextLine();
     }
 
     public static void coldYahtzee(){
