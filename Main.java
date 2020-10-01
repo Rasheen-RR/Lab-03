@@ -53,7 +53,7 @@ public class Main {
                 }else{
                     dice.rollDice();
                     System.out.println(dice);
-                }
+                 }
                 restart = true;
                 break;
             case 5:
@@ -130,7 +130,7 @@ public class Main {
                         System.out.println(dice);
                         return;
                     }
-                }catch (InvalidAttributeValueException ex){
+                }catch (Exception ex){
                     System.out.println("Enter a valid side!");
                     continue;
                 }

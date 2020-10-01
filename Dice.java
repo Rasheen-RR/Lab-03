@@ -59,7 +59,6 @@ public class Dice {
 
 
     public void rollDice(){
-            Random random = new Random();
             int randomNum =  ThreadLocalRandom.current().nextInt(1, this.getNumSides() + 1);
             this.setSideUp(randomNum);
             System.out.println(String.format("You rolled: %s", randomNum));
